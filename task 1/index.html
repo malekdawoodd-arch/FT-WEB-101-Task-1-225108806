@@ -1,57 +1,67 @@
+<!-- Malek Dawod - 225108806 -->
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>صفحتي الشخصية</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            padding: 50px;
-            background-color: #f4f4f4;
-            color: #333;
-            transition: background 0.3s, color 0.3s;
-        }
-        .dark-mode {
-            background-color: #222;
-            color: #fff;
-        }
-        img {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            object-fit: cover;
-            margin-bottom: 20px;
-            border: 3px solid #ccc;
-        }
-        button {
-            padding: 10px 20px;
-            font-size: 16px;
-            cursor: pointer;
-            border: none;
-            border-radius: 5px;
-            background-color: #007bff;
-            color: white;
-        }
-        button:hover {
-            background-color: #0056b3;
-        }
-    </style>
+    <title>Profile Page - Malek Dawod</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <header>
+        <div class="nav-bar">
+            <h1>Malek Dawod</h1>
+            <nav>
+                <a href="#about">About</a>
+                <a href="#cards">Cards</a>
+                <a href="#contact">Contact</a>
+            </nav>
+        </div>
+    </header>
 
-    <img src="images/me.jpg" alt="صورتي الشخصية">
-    <h1>أهلاً بك في صفحتي الشخصية</h1>
-    <p>أنا طالب بكلية الحاسبات، جامعة المنصورة الجديدة.</p>
-    
-    <button onclick="toggleDarkMode()">تغيير الوضع المظلم</button>
+    <main>
+        <section class="profile-section">
+            <img src="images/me.jpg" alt="Personal photo of Malek Dawod" class="profile-img">
+        </section>
 
-    <script>
-        function toggleDarkMode() {
-            document.body.classList.toggle('dark-mode');
-        }
-    </script>
+        <section id="cards" class="cards-section">
+            <div class="card">
+                <h3>Programming</h3>
+                <p>Passionate about software development, coding, and building applications.</p>
+            </div>
+            <div class="card">
+                <h3>E-commerce</h3>
+                <p>Managing online retail stores and digital storefront experiences.</p>
+            </div>
+            <div class="card">
+                <h3>Academics</h3>
+                <p>Studying computer science and engineering at New Mansoura University.</p>
+            </div>
+        </section>
 
+        <section id="contact" class="form-section">
+            <form>
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" value="Malek Dawod" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" value="malek@225108806.nmu.eg" required>
+                </div>
+                <button type="submit" id="submit-btn">Send Message</button>
+            </form>
+        </section>
+
+        <section class="theme-toggle-section">
+            <button id="theme-toggle">Toggle Dark Mode</button>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Malek Dawod. All rights reserved.</p>
+    </footer>
+
+    <script src="js/script.js"></script>
 </body>
 </html>

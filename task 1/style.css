@@ -1,0 +1,231 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --bg-color: #0d1117;
+    --card-bg: #161b22;
+    --card-border: #30363d;
+    --text-color: #c9d1d9;
+    --heading-color: #ffffff;
+    --accent-color: #58a6ff;
+    --nav-bg: rgba(22, 27, 34, 0.8);
+    --input-bg: #0d1117;
+    --shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+}
+
+body.dark {
+    /* الستايل الأساسي غامق احترافي بالفعل */
+    --bg-color: #0d1117;
+    --card-bg: #161b22;
+}
+
+/* لو حابب الوضع الفاتح */
+body:not(.dark) {
+    --bg-color: #f6f8fa;
+    --card-bg: #ffffff;
+    --card-border: #d0d7de;
+    --text-color: #24292f;
+    --heading-color: #0f172a;
+    --accent-color: #0969da;
+    --nav-bg: rgba(255, 255, 255, 0.8);
+    --input-bg: #f6f8fa;
+    --shadow: 0 8px 24px rgba(140, 149, 159, 0.2);
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    padding-bottom: 2rem;
+}
+
+/* Header & Navbar */
+header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    backdrop-filter: blur(10px);
+    background-color: var(--nav-bg);
+    border-bottom: 1px solid var(--card-border);
+}
+
+.nav-bar {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+}
+
+.nav-bar h1 {
+    color: var(--heading-color);
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+}
+
+.nav-bar nav a {
+    color: var(--text-color);
+    text-decoration: none;
+    margin-left: 1.8rem;
+    font-weight: 500;
+    transition: color 0.2s ease;
+}
+
+.nav-bar nav a:hover {
+    color: var(--accent-color);
+}
+
+/* Main Content Layout */
+main {
+    max-width: 1000px;
+    margin: 2.5rem auto;
+    padding: 0 1.5rem;
+}
+
+/* Profile Image */
+.profile-section {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2.5rem;
+}
+
+.profile-img {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid var(--card-border);
+    box-shadow: var(--shadow);
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.profile-img:hover {
+    transform: scale(1.03);
+    border-color: var(--accent-color);
+}
+
+/* Cards Section - Flexbox */
+.cards-section {
+    display: flex;
+    justify-content: space-between;
+    gap: 1.5rem;
+    margin-bottom: 2.5rem;
+}
+
+.card {
+    background-color: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 12px;
+    padding: 1.8rem;
+    flex: 1;
+    box-shadow: var(--shadow);
+    transition: transform 0.25s ease, border-color 0.25s ease;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+    border-color: var(--accent-color);
+}
+
+.card h3 {
+    color: var(--heading-color);
+    font-size: 1.25rem;
+    margin-bottom: 0.75rem;
+}
+
+.card p {
+    font-size: 0.95rem;
+    color: var(--text-color);
+    opacity: 0.9;
+}
+
+/* Form Section */
+.form-section {
+    background-color: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: var(--shadow);
+    margin-bottom: 2.5rem;
+}
+
+.form-group {
+    margin-bottom: 1.2rem;
+}
+
+.form-group label {
+    display: block;
+    color: var(--heading-color);
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: 0.4rem;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 1px solid var(--card-border);
+    border-radius: 8px;
+    background-color: var(--input-bg);
+    color: var(--text-color);
+    font-size: 0.95rem;
+    outline: none;
+    transition: border-color 0.2s ease;
+}
+
+.form-group input:focus {
+    border-color: var(--accent-color);
+}
+
+button {
+    background-color: var(--accent-color);
+    color: #ffffff;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    font-size: 0.95rem;
+    font-weight: 600;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: opacity 0.2s ease, transform 0.1s ease;
+}
+
+button:hover {
+    opacity: 0.9;
+}
+
+button:active {
+    transform: scale(0.98);
+}
+
+/* Dark Mode Button Section */
+.theme-toggle-section {
+    text-align: center;
+    margin-bottom: 2.5rem;
+}
+
+#theme-toggle {
+    background-color: var(--card-bg);
+    color: var(--heading-color);
+    border: 1px solid var(--card-border);
+    box-shadow: var(--shadow);
+}
+
+#theme-toggle:hover {
+    border-color: var(--accent-color);
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 1.5rem;
+    color: var(--text-color);
+    font-size: 0.9rem;
+    border-top: 1px solid var(--card-border);
+}
